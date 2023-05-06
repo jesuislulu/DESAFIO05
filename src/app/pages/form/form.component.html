@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()"
+[formGroup]="registerForm"
+class="container">
+  <mat-card>
+    <mat-card-content appFontSize>Formulario Estudiante</mat-card-content>
+  </mat-card>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput [formControl]="nameControl"
+    type="text"
+    placeholder="Debe ingresar un mínimo de 3 caracteres."
+    [ngClass]="{ 'form-invalid': this.nameControl.invalid && this.nameControl.touched }">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input matInput [formControl]="lastNameControl"
+    type="text"
+    placeholder="Debe ingresar un mínimo de 3 caracteres."
+    [ngClass]="{ 'form-invalid': this.lastNameControl.invalid && this.lastNameControl.touched }">
+  </mat-form-field>
+  <button color="accent" type="submit" mat-raised-button>
+    Registrar
+  </button>
+</form>
